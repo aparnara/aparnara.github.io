@@ -108,7 +108,7 @@
       function showCalendar(){
         console.log("Inside Show Calendar")
         var src = "https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles"
-        document.getElementById('calendar').src = loc;
+        document.getElementById('calendar').src = src;
         document.getElementById('textval').innerHtml = "Some random text"
       }
 
@@ -127,7 +127,7 @@
     </div>
     <pre id="output"></pre>
     <div>
-      <iframe id = "calendar" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <iframe id = "calendar" src ="www.livenation.com" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
     <div> 
       <h id="textval">Old text</h>
