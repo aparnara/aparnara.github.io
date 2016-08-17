@@ -107,8 +107,8 @@
       
       function showCalendar(){
         console.log("Inside Show Calendar")
-        var loc = '<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>';
-        document.getElementById('calendar').innerHtml = loc;
+        var src = "https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles"
+        document.getElementById('calendar').src = loc;
         document.getElementById('textval').innerHtml = "Some random text"
       }
 
@@ -117,7 +117,7 @@
     </script>
   </head>
   <body>
-    <h> Embedded Google Calendar V1</h>
+    <h> Embedded Google Calendar V2</h>
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Google Calendar API</span>
       <!--Button for the user to click to initiate auth sequence -->
@@ -126,9 +126,12 @@
       </button>
     </div>
     <pre id="output"></pre>
-    <div id="calendar">
+    <div>
+      <iframe id = "calendar" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
-    <div id = "textval"> </div>
+    <div> 
+      <h id="textval">Old text</h>
+    </div>
   </body>
 </html>
 
