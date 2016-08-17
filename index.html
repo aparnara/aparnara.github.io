@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login with facebook V2</title>
+<title>Login with facebook V3</title>
 </head>
 <body>
 <script>
@@ -80,7 +80,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Thanks for logging in, ' + response + '!';
     });
   }
 </script>
