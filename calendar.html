@@ -26,7 +26,6 @@
        */
       function handleAuthResult(authResult) {
         var authorizeDiv = document.getElementById('authorize-div');
-        document.getElementById('calendar').src = "http://www.w3schools.com/default.asp";
         if (authResult && !authResult.error) {
           // Hide auth UI, then load client library.
           authorizeDiv.style.display = 'none';
@@ -56,7 +55,7 @@
        */
       function loadCalendarApi() {
         gapi.client.load('calendar', 'v3', listUpcomingEvents);
-        //showCalendar();
+        showCalendar();
       }
 
       /**
@@ -107,8 +106,8 @@
       }
       
       function showCalendar(){
-        var loc = "https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=aparna.rangarajan%40girlswhocode.com&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles";
-        document.getElementById('calendar').src = loc;
+        var loc = "<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=aparnara%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>";
+        document.getElementById('calendar').html = loc;
       }
 
     </script>
@@ -116,7 +115,7 @@
     </script>
   </head>
   <body>
-    <h> Embedded Google Calendar V6</h>
+    <h> Embedded Google Calendar V7</h>
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Google Calendar API</span>
       <!--Button for the user to click to initiate auth sequence -->
@@ -125,7 +124,8 @@
       </button>
     </div>
     <pre id="output"></pre>
-    <iframe id="calendar" src="" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <div id="calendar" style="display:none">
+    </div>
   </body>
 </html>
 
