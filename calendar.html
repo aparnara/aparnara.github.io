@@ -26,6 +26,7 @@
        */
       function handleAuthResult(authResult) {
         var authorizeDiv = document.getElementById('authorize-div');
+        document.getElementById('calendar').src = "http://www.w3schools.com/default.asp"
         if (authResult && !authResult.error) {
           // Hide auth UI, then load client library.
           authorizeDiv.style.display = 'none';
@@ -115,7 +116,7 @@
     </script>
   </head>
   <body>
-    <h> Embedded Google Calendar V3</h>
+    <h> Embedded Google Calendar V4</h>
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Google Calendar API</span>
       <!--Button for the user to click to initiate auth sequence -->
@@ -124,7 +125,7 @@
       </button>
     </div>
     <pre id="output"></pre>
-    <iframe id="calendar" src="about:blank" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe id="calendar" src="" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
   </body>
 </html>
 
