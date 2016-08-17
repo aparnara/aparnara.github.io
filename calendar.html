@@ -107,8 +107,10 @@
       
       function showCalendar(){
         console.log("Inside Show Calendar")
-        var src = "https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles"
-        document.getElementById('calendar').src = src + '&ampsrc=aparna.rangarajan@girlswhocode.com';
+        var loc = "https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles"
+        var src = "&amp;src=aparna.rangarajan%40girlswhocode.com"
+        var new_src = loc+src
+        document.getElementById('calendar').src = new_src;
         document.getElementById('textval').innerHtml = "Some random text"
       }
 
