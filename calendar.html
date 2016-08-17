@@ -106,10 +106,11 @@
       }
       
       function showCalendar(){
-        console.log("Inside Show Calendar")
+        console.log("Inside Show Calendar");
         var loc = "https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles"
-        var src = "&amp;src=aparna.rangarajan%40girlswhocode.com"
-        var new_src = loc+src
+        var src = "&amp;src=aparna.rangarajan%40girlswhocode.com";
+        var new_src = loc+src;
+        console.log(new_src);
         document.getElementById('calendar').src = new_src;
         document.getElementById('textval').innerHtml = "Some random text"
       }
@@ -119,7 +120,7 @@
     </script>
   </head>
   <body>
-    <h> Embedded Google Calendar V2</h>
+    <h> Embedded Google Calendar V3</h>
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Google Calendar API</span>
       <!--Button for the user to click to initiate auth sequence -->
