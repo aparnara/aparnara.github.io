@@ -11,6 +11,22 @@
 </head>
 <body>
 <script>
+
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+      }
+      slideIndex++;
+      if (slideIndex > x.length) {slideIndex = 1} 
+      x[slideIndex-1].style.display = "block"; 
+      setTimeout(carousel, 2000); 
+  }
+
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -90,21 +106,6 @@
     });
   }
   
-var slideIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1} 
-    x[slideIndex-1].style.display = "block"; 
-    setTimeout(carousel, 2000); 
-}
-
 </script>
 
 <!--
@@ -113,13 +114,13 @@ function carousel() {
   the FB.login() function when clicked.
 -->
 
+<h2 class="w3-center">HTML slides</h2>
+
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
 <div id="status">
 </div>
-
-<h2 class="w3-center">HTML slides</h2>
 
 <div class="w3-content" style="max-width:400px">
 
