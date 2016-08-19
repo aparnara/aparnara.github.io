@@ -7,7 +7,6 @@
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
       var CLIENT_ID = '558843560879-ippst1fooukp95egb9mugn5jt6aj973p.apps.googleusercontent.com';
-
       var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
       /**
@@ -58,7 +57,6 @@
        */
       function loadCalendarApi() {
         gapi.client.load('calendar', 'v3', listUpcomingEvents);
-        showCalendar();
       }
 
       /**
@@ -108,10 +106,10 @@
         pre.appendChild(textContent);
       }
       
-      function showCalendar(){
+      function showCalendar(userEmail){
         console.log("Inside Show Calendar");
         var part1 = "https://calendar.google.com/calendar/embed?";
-        var part2 = "src=aparna.rangarajan@girlswhocode.com"; //email id from the user logged in goes here. 
+        var part2 = "src=" + userEmail; //email id from the user logged in goes here. 
         var part3 = "&ctz=America/Los_Angeles";
         var src = part1+part2+part3;
         console.log(src);
@@ -123,7 +121,7 @@
     </script>
   </head>
   <body>
-    <h>Test google signin + calendar</h>
+    <h>Test google signin + calendar V2</h>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     <script>
       function onSignIn(googleUser) {
@@ -135,6 +133,7 @@
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
+        showCalenar(profile.getEmail());
 
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
