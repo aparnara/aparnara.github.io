@@ -56,7 +56,6 @@
        */
       function loadCalendarApi() {
         gapi.client.load('calendar', 'v3', listUpcomingEvents);
-        gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
         showCalendar();
       }
 
@@ -118,23 +117,6 @@
         console.log("Done changing src")
       }
       
-      
-      /**
-       * Response callback for when the API client receives a response.
-       *
-       * @param resp The API response object with the user email and profile information.
-       */
-      function handleEmailResponse(resp) {
-        console.log("Inside handleEmailResponse")
-        var primaryEmail;
-        for (var i=0; i < resp.emails.length; i++) {
-          if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
-          console.log(primaryEmail);
-        }
-        document.getElementById('responseContainer').innerHtml = 'Primary email: ' +
-            primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);
-      }
-      
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -150,7 +132,7 @@
     </script>
   </head>
   <body>
-    <h>Embedded Google Calendar</h>
+    <h>Embedded Google Calendar V1</h>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Google Calendar API</span>
@@ -158,9 +140,6 @@
       <button id="authorize-button" onclick="handleAuthClick(event)">
         Authorize
       </button>
-    </div>
-    <div id="response">
-        <h></h>
     </div>
     <pre id="output"></pre>
     <div>
