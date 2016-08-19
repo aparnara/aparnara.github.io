@@ -5,7 +5,11 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
+    <h>Calendar</h>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <div>
+      <iframe id = "calendar" src ="" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -32,8 +36,5 @@
         console.log("Done changing src")
       }
     </script>
-     <div>
-      <iframe id = "calendar" src ="" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    </div>
   </body>
 </html>
