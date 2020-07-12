@@ -1,3 +1,3 @@
 # aparnara.github.io
 
-What to say
+Childrens homework management app using google/fb login. 
